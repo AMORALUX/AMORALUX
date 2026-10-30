@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMORALUX - Love Meets Luxury</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090909;color:white;font-family:Arial,sans-serif}
+header{padding:25px 18px;text-align:center;border-bottom:1px solid #a88735}
+.logo{font-size:34px;font-weight:bold;color:#d6b45b;letter-spacing:4px}
+.tag{color:#ccc;font-size:13px;margin-top:8px}
+nav{display:flex;justify-content:space-around;padding:17px 5px;background:#151515;position:sticky;top:0}
+nav button{background:none;border:0;color:#d9b85e;font-size:12px}
+main{padding:20px;max-width:650px;margin:auto}
+h2{color:#dfbd65}
+.hero{text-align:center;padding:35px 15px;background:linear-gradient(140deg,#29200c,#090909);border:1px solid #856a2d;border-radius:15px}
+.hero h1{font-size:32px;color:#e6c66e}
+.gold{background:#d4ae52;color:#111;border:0;padding:13px 22px;border-radius:25px;font-weight:bold}
+.section{margin-top:28px}
+.card{background:#171717;border:1px solid #51401d;border-radius:13px;padding:17px;margin:12px 0}
+.card h3{color:#e3c16b}
+input{width:100%;padding:13px;margin:7px 0;background:#202020;border:1px solid #76602c;color:white;border-radius:8px}
+footer{text-align:center;padding:25px;color:#aaa;font-size:12px}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">AMORALUX</div>
+<div class="tag">LOVE • CONNECTION • LUXURY • OPPORTUNITY</div>
+</header>
+<nav>
+<button onclick="show('home')">HOME</button>
+<button onclick="show('dating')">DATING</button>
+<button onclick="show('earn')">EARN</button>
+<button onclick="show('premium')">PREMIUM</button>
+</nav>
+<main>
+<section id="home">
+<div class="hero">
+<h1>Love Meets Luxury</h1>
+<p>Discover meaningful connections and exciting opportunities worldwide.</p>
+<button class="gold" onclick="show('dating')">EXPLORE AMORALUX</button>
+</div>
+<div class="section">
+<h2>Welcome to AMORALUX</h2>
+<p>A worldwide community connecting people through love, ambition and opportunity.</p>
+</div>
+<div class="card">
+<h3>❤️ Find Love</h3>
+<p>Discover people and build meaningful relationships.</p>
+</div>
+<div class="card">
+<h3>💎 Premium Lifestyle</h3>
+<p>Unlock exclusive membership experiences.</p>
+</div>
+<div class="card">
+<h3>💰 Money Opportunities</h3>
+<p>Explore earning opportunities and rewards.</p>
+</div>
+</section>
+
+<section id="dating" class="hidden">
+<h2>❤️ Discover Connections</h2>
+<p>Create your profile to start meeting people worldwide.</p>
+<div class="card">
+<h3>Create Your Profile</h3>
+<input id="name" placeholder="Your display name">
+<input id="country" placeholder="Your country">
+<input id="about" placeholder="Tell us about yourself">
+<button class="gold" onclick="profile()">Create Profile</button>
+<p id="profileResult"></p>
+</div>
+</section>
+
+<section id="earn" class="hidden">
+<h2>💰 AMORALUX Opportunities</h2>
+<div class="card">
+<h3>Referral Rewards</h3>
+<p>Invite friends and earn rewards when eligible referral conditions are met.</p>
+<button class="gold" onclick="alert('Referral program coming soon!')">Explore Referrals</button>
+</div>
+<div class="card">
+<h3>Creator Opportunities</h3>
+<p>Explore future opportunities to earn through approved content and partnerships.</p>
+<button class="gold" onclick="alert('Creator program coming soon!')">Explore Creators</button>
+</div>
+<div class="card">
+<h3>Rewards Center</h3>
+<p>View future promotional rewards and eligible activities.</p>
+<button class="gold" onclick="alert('Rewards center coming soon!')">View Rewards</button>
+</div>
+</section>
+
+<section id="premium" class="hidden">
+<h2>💎 AMORALUX PREMIUM</h2>
+<div class="card">
+<h3>FREE MEMBERSHIP</h3>
+<p>• Create a profile</p>
+<p>• Discover members</p>
+<p>• Basic connections</p>
+</div>
+<div class="card">
+<h3>GOLD PREMIUM</h3>
+<p>• Exclusive profile features</p>
+<p>• Advanced discovery</p>
+<p>• Premium visibility</p>
+<p>• Exclusive experiences</p>
+<button class="gold" onclick="alert('Premium subscriptions coming soon!')">UPGRADE SOON</button>
+</div>
+</section>
+</main>
+<footer>© 2026 AMORALUX. Love Meets Luxury. Worldwide.</footer>
+<script>
+function show(id){
+['home','dating','earn','premium'].forEach(x=>{
+document.getElementById(x).classList.add('hidden');
+});
+document.getElementById(id).classList.remove('hidden');
+window.scrollTo(0,0);
+}
+function profile(){
+let n=document.getElementById('name').value.trim();
+let c=document.getElementById('country').value.trim();
+if(!n||!c){alert('Please enter your name and country.');return;}
+document.getElementById('profileResult').innerText=
+'Welcome '+n+' from '+c+'! Your demo profile is ready.';
+}
+</script>
+</body>
+</html>
